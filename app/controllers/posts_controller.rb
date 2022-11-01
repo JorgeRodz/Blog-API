@@ -34,13 +34,13 @@ class PostsController < ApplicationController
 
   # GET /posts/{id}
   def show
-    @post = Post.find(params[:id]) # In the case the method is not found....'find' will raise a 'RecordNotFound' exception, this way we can handle the exception in the 'rescue_from' block
+    @post = Post.find(params[:id]) # In the case the record is not found....'find' will raise a 'RecordNotFound' exception, this way we can handle the exception in the 'rescue_from' block
     render json: @post, status: :ok
   end
 
   # PUT /posts/{id}
   def update
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:id]) # same case as 'show' method
     @post.update!(update_params) # Here the 'update!' method will raise a 'RecordInvalid' if the record is invalid, this way we can handle the exception in the 'rescue_from' block
     render json: @post, status: :ok
   end

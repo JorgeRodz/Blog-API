@@ -42,7 +42,14 @@ RSpec.describe 'Posts', type: :request do
 
       payload = JSON.parse(response.body)       # to optain the JSON response body
       expect(payload).not_to be_empty           # JSON response not_to be empty
-      expect(payload['id']).to eq(post.id)      # JSON response id should be equal to the post id
+      # The payload(JSON response body) should contain all the keys listed below
+      expect(payload['id']).to eq(post.id)
+      expect(payload['title']).to eq(post.title)
+      expect(payload['content']).to eq(post.content)
+      expect(payload['published']).to eq(post.published)
+      expect(payload['author']['name']).to eq(post.user.name)
+      expect(payload['author']['email']).to eq(post.user.email)
+      expect(payload['author']['id']).to eq(post.user.id)
       expect(response).to have_http_status(200) # HTTP response status code 200
     end
 

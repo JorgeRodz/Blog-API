@@ -29,6 +29,9 @@ class PostsController < ApplicationController
   # GET /posts/
   def index
     @posts = Post.where(published: true)
+    # Here we call the 'search' method from the 'PostsSearchService' class if the 'query' param is present on the request
+    # We pass the 'current published posts' and the 'search' param in order to look for the posts that match the search param
+    @posts = PostsSearchService.search(@posts, params[:search]) if !params[:search].nil? && params[:search].present?
     render json: @posts, status: :ok
   end
 

@@ -29,6 +29,23 @@ RSpec.describe 'Posts', type: :request do
         expect(response).to have_http_status(200) # HTTP response status code 200
       end
     end
+
+    describe 'with data in the DB - Search Post' do
+      # Create three published post with different titles
+      let!(:hola_mundo) { create(:published_post, title: 'Hola Mundo') }
+      let!(:hola_rails) { create(:published_post, title: 'Hola Rails') }
+      let!(:curso_rails) { create(:published_post, title: 'Curso Rails') }
+
+      it 'should filter posts by title' do
+        get '/posts?search=Hola' # get request with query params(?search=Hola)
+
+        payload = JSON.parse(response.body)       # to optain the JSON response body
+        expect(payload).not_to be_empty           # JSON response have not to be empty
+        expect(payload.size).to eq(2)             # JSON response size should be equal to 2
+        expect(payload.map { |p| p['id'] }.sort).to eq([hola_mundo.id, hola_rails.id].sort) # JSON response ids should be equal to the ids of the posts with title 'Hola'
+        expect(response).to have_http_status(200) # HTTP response status code 200
+      end
+    end
   end
 
   #------------------------------ GET /posts/{id} - SHOW ------------------------------

@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     # Here we call the 'search' method from the 'PostsSearchService' class if the 'query' param is present on the request
     # We pass the 'current published posts' and the 'search' param in order to look for the posts that match the search param
     @posts = PostsSearchService.search(@posts, params[:search]) if !params[:search].nil? && params[:search].present?
-    render json: @posts, status: :ok
+    render json: @posts.includes(:user), status: :ok # here we use the 'includes' method to avoid the N+1 problem
   end
 
   # GET /posts/{id}

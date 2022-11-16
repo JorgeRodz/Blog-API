@@ -74,7 +74,7 @@ RSpec.describe 'Posts', type: :request do
       get '/posts/1000' # make a GET request to /posts/{id}
 
       payload = JSON.parse(response.body) # to optain the JSON response body
-      expect(payload['error']).not_to be_empty # JSON response should contain a key 'id'
+      expect(payload['error']).not_to be_empty # JSON response should contain an error message
       expect(response).to have_http_status(404) # HTTP response status code 404
     end
   end
@@ -118,7 +118,7 @@ RSpec.describe 'Posts', type: :request do
       post '/posts', params: req_payload
       payload = JSON.parse(response.body)            # to optain the JSON response body
       expect(payload).not_to be_empty                # JSON response not_to be empty
-      expect(payload['error']).not_to be_empty       # JSON response should contain a key 'id'
+      expect(payload['error']).not_to be_empty       # JSON response should contain an error message
       expect(response).to have_http_status(:unprocessable_entity) # HTTP response status code 422
     end
   end
@@ -152,7 +152,7 @@ RSpec.describe 'Posts', type: :request do
       put '/posts/1000' # make a PUT request to /posts/{id}, so in this case this post does not exist
 
       payload = JSON.parse(response.body) # to optain the JSON response body
-      expect(payload['error']).not_to be_empty # JSON response should contain a key 'id'
+      expect(payload['error']).not_to be_empty # JSON response should contain an error message
       expect(response).to have_http_status(404) # HTTP response status code 404
     end
 
@@ -171,7 +171,7 @@ RSpec.describe 'Posts', type: :request do
 
       payload = JSON.parse(response.body)            # to optain the JSON response body
       expect(payload).not_to be_empty                # JSON response not_to be empty
-      expect(payload['error']).not_to be_empty       # JSON response should contain a key 'id'
+      expect(payload['error']).not_to be_empty       # JSON response should contain an error message
       expect(response).to have_http_status(:unprocessable_entity) # HTTP response status code 422
     end
   end

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This factories are used on the tests in order to create fake data
 FactoryBot.define do
   # factory for create post with ramdom published value(true or false)
   factory :post do

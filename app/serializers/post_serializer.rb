@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# This methods are generally used on the controllers
+# In order to serialize what information will include in the JSON response of a post
 class PostSerializer < ActiveModel::Serializer
   attributes :id, :title, :content, :published, :author
 

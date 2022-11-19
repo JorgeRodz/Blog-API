@@ -8,7 +8,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-(1..10).each do |i|
-  User.create(email: "user#{i}@gmail.com", name: "name #{i}")
-  Post.create(title: "title #{i}", content: "content #{i}", published: true, user_id: i)
-end
+# (1..10).each do |i|
+#   User.create(email: "user#{i}@gmail.com", name: "name #{i}")
+#   Post.create(title: "title #{i}", content: "content #{i}", published: true, user_id: i)
+# end

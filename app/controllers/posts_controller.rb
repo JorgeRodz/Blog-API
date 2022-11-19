@@ -2,7 +2,7 @@
 
 class PostsController < ApplicationController
   include Secured
-  before_action :authenticate_user!, only: %i[create update]
+  before_action :authenticate_user!, only: %i[create update show]
 
   # ---------- Handling Exceptions ----------
   # ℹ️ Is import to prioritize the exceptions in the order of the most general to the most specific ℹ️

@@ -39,7 +39,7 @@ RSpec.describe 'Posts with authentication', type: :request do
         end
 
         context 'when post is a draft' do
-          before { get "/posts/#{user2_post_draft.id}", headers: auth_headers_U2 }
+          before { get "/posts/#{user2_post_draft.id}", headers: auth_headers_U1 }
           # payload
           context 'payload' do
             subject { payload }
@@ -53,7 +53,19 @@ RSpec.describe 'Posts with authentication', type: :request do
         end
       end
 
-      context "when requesting user's post" do
+      context 'when requesting user own post - no matter is public or a draft' do
+        before { get "/posts/#{user2_post_draft.id}", headers: auth_headers_U2 }
+        # payload
+        context 'payload' do
+          subject { payload }
+          it { is_expected.to include(:id) }
+          it { expect(payload['published']).to eq false }
+        end
+        # response
+        context 'response' do
+          subject { response }
+          it { is_expected.to have_http_status(:ok) }
+        end
       end
     end
   end

@@ -13,6 +13,13 @@ module Secured
       # - 'Current.user' and exit the method
     end
 
+    # Method responsible for the 'show' action
+    if request.request_method == 'GET'
+      # If the post is a draft and the user is not the owner of the post
+      render json: { error: 'Not Authorized' }, status: :unauthorized unless Post.find(params[:id]).published
+      return
+    end
+
     # If the token do not match any user token return a 401 Unauthorized response
     render json: { error: 'Not Authorized' }, status: :unauthorized
   end

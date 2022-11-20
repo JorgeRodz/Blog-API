@@ -71,7 +71,7 @@ RSpec.describe 'Posts with authentication', type: :request do
   end
 
   # * ------------------------------ POST /posts - CREATE ------------------------------
-  describe 'POST /posts/{id}' do
+  describe 'POST /posts' do
     # * ----- con auth -> crear -----
     context 'with valid auth' do
       before { post '/posts', params: create_params, headers: auth_headers_U1 }

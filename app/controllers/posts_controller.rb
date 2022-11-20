@@ -3,6 +3,7 @@
 class PostsController < ApplicationController
   include Secured
   before_action :authenticate_user!, only: %i[create update show]
+  # skip_before_action :authenticate_user!, only: %i[show], unless: :post_published?
 
   # ---------- Handling Exceptions ----------
   # ℹ️ Is import to prioritize the exceptions in the order of the most general to the most specific ℹ️
@@ -70,5 +71,10 @@ class PostsController < ApplicationController
 
   def update_params
     params.require(:post).permit(:title, :content, :published)
+  end
+
+  def post_published?
+    post = Post.find(params[:id])
+    post.published
   end
 end

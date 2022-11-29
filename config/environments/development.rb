@@ -46,6 +46,11 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
+  # ---------- Mailer config ----------
+  # Config mailer in order to send email using the gem 'letter_opener'
+  config.action_mailer.delivery_method = :letter_opener
+  # ---------- Mailer config ----------
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 

@@ -11,9 +11,7 @@ PostReport = Struct.new(:word_count, :word_histogram) do
     )
   end
 
-  private
-
-  def calc_histogram(post)
+  def self.calc_histogram(post)
     post
       .content
       .split

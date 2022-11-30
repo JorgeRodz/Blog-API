@@ -12,3 +12,24 @@
 #   User.create(email: "user#{i}@gmail.com", name: "name #{i}")
 #   Post.create(title: "title #{i}", content: "content #{i}", published: true, user_id: i)
 # end
+
+user1 = FactoryBot.create(:user)
+user2 = FactoryBot.create(:user)
+
+20.times do |i|
+  if i <= 10
+    if i <= 5
+      FactoryBot.create(:published_post, user_id: user1.id)
+    else
+      FactoryBot.create(:draft_post, user_id: user1.id)
+    end
+  end
+
+  if i > 10
+    if i > 10 && i <= 15
+      FactoryBot.create(:published_post, user_id: user2.id)
+    else
+      FactoryBot.create(:draft_post, user_id: user2.id)
+    end
+  end
+end

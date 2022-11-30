@@ -18,6 +18,14 @@ FactoryBot.define do
     title { Faker::Lorem.sentence }
     content { Faker::Lorem.paragraph }
     published { true }
-    user
+    # user
+  end
+
+  # factory to create only draft posts
+  factory :draft_post, class: 'Post' do
+    title { Faker::Lorem.sentence }
+    content { Faker::Lorem.paragraph }
+    published { false }
+    # user
   end
 end

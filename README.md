@@ -9,8 +9,9 @@
 [![Generic badge](https://img.shields.io/badge/💎-active__model__serializer-important?&style=plastic)](https://rubygems.org/gems/active_model_serializers)&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/💎-letter__opener-important?&style=plastic)](https://rubygems.org/gems/letter_opener/versions/1.4.1?locale=es)&nbsp;&nbsp; -&nbsp;&nbsp; [![Generic badge](https://img.shields.io/badge/🧪-rspec--rails-important?&style=plastic)](https://rubygems.org/gems/rspec-rails)&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/🧪-factory__bot__rails-important?&style=plastic)](https://rubygems.org/gems/factory_bot_rails)&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/🧪-shoulda--matchers-important?&style=plastic)](https://matchers.shoulda.io/)&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/🧪-faker-important?&style=plastic)](https://rubygems.org/gems/faker)&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/🧪-database__cleaner-important?&style=plastic)](https://rubygems.org/gems/database_cleaner)
 
 ## 📷 Screenshots 🎥
+![image](https://user-images.githubusercontent.com/13999498/204707292-0cfdbb51-449b-4853-a9c7-3bafeeae8188.png)
 
-Aqui va ir una screenshot de postman
+
 
 ## 📝 Description 📖
 

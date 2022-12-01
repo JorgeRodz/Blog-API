@@ -9,9 +9,8 @@
 [![Generic badge](https://img.shields.io/badge/💎-active__model__serializer-important?&style=plastic)](https://rubygems.org/gems/active_model_serializers)&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/💎-letter__opener-important?&style=plastic)](https://rubygems.org/gems/letter_opener/versions/1.4.1?locale=es)&nbsp;&nbsp; -&nbsp;&nbsp; [![Generic badge](https://img.shields.io/badge/🧪-rspec--rails-important?&style=plastic)](https://rubygems.org/gems/rspec-rails)&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/🧪-factory__bot__rails-important?&style=plastic)](https://rubygems.org/gems/factory_bot_rails)&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/🧪-shoulda--matchers-important?&style=plastic)](https://matchers.shoulda.io/)&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/🧪-faker-important?&style=plastic)](https://rubygems.org/gems/faker)&nbsp;&nbsp;[![Generic badge](https://img.shields.io/badge/🧪-database__cleaner-important?&style=plastic)](https://rubygems.org/gems/database_cleaner)
 
 ## 📷 Screenshots 🎥
+
 ![image](https://user-images.githubusercontent.com/13999498/204707292-0cfdbb51-449b-4853-a9c7-3bafeeae8188.png)
-
-
 
 ## 📝 Description 📖
 
@@ -28,6 +27,15 @@ Simple API Blog in which we can create, read and update post. Here are a more de
 
 - No user CRUD by now, but there are two user created on the DB.
 - The user information is on the 'How to use it' section
+
+## ⏯️ Run locally 💻️
+
+- Clone the repo
+- Run `bundle install`
+- Run `rails db:setup`
+- Run `rails s`
+
+And that's it, you can start using the API on `localhost:3000`
 
 ## 👨‍💻 Technologies 💻️
 

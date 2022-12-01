@@ -25,8 +25,7 @@ Simple API Blog in which we can create, read and update post. Here are a more de
 
 ## User
 
-- No user CRUD by now, but there are two user created on the DB.
-- The user information is on the 'How to use it' section
+- No user CRUD by now, but there seed data to create user and posts.
 
 ## ⏯️ Run locally 💻️
 

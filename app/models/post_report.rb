@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# note: This "class PostReport < Struct.new()" is the same as "PostReport = Struct.new() do"
+# note: This "PostReport = Struct.new() do" is the same as "class PostReport < Struct.new()"
 # * This class is responsible for generating the report of the post, an is mainly used by the PostReportJob
 PostReport = Struct.new(:word_count, :word_histogram) do
   def self.generate(post)
